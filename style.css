@@ -1,0 +1,130 @@
+/* for light/dark mode */
+
+
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    /* background-color: red; */
+    overflow: hidden;
+}
+.gameContainer{
+    background-image: url(space.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+}
+
+.dino{
+    background-image: url(mariok.png);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    /* width: 233px; */
+    /* height: 114px; */
+    height: 110px;
+    position: absolute;
+    bottom:0;
+    /* left: 52px; */
+    left: 30px;
+}
+
+.obstacle{
+    /* width: 166px; */
+    width: 158px;
+    height: 75px;
+    /* height: 113px; */
+    background-image: url(rocket.png);
+    
+    background-size: contain;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    /* left: 44vw; */
+    left: 68vw;
+}
+
+.animateDino{
+    animation: dino 0.6s linear;
+}
+
+.obstacleAni{
+    animation: obstacleAni 5s linear infinite;
+}
+
+.gameOver{
+    position: relative;
+    top:63px;
+    font-size: 33px;
+    color: #c9b2b2;
+    text-align: center; 
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#scoreCont{
+    font-size: 25px;
+    color: #c9b2b2;
+    font-weight: bold;
+    position: absolute;
+    right: 45px;
+    top: 31px;
+    border: 2px solid #c9b2b2;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+}
+
+@keyframes dino{
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 422px;
+    }
+    100%{
+        bottom: 0; 
+    }
+}
+
+@keyframes obstacleAni{
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: -10vw;
+    }
+}
+
+
+
+.frame{
+    /* position: relative; */
+    z-index: 2;
+    overflow: hidden;
+    /* height: 5vw; */
+    /* background-color: yellow; */
+}
+
+
+
+
+
+#circle {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    transform:translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgb(247, 237, 51);
+    top: 0;
+    left: 0;
+    width: 2vw;
+    height: 2vw;
+    /* background-color: rgb(72, 18, 137); */
+    /* background-color: #d73b77; */
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+}
