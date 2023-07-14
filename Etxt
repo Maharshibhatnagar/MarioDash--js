@@ -1,0 +1,42 @@
+Initialization:
+
+score is initialized to 0.
+cross is initialized as true.
+Two audio objects (audio and audiogo) are created, referring to audio files "Mpiano.mp3" and "mariofail.mp3" respectively.
+An audio file ("Mpiano.mp3") is played after a delay of 1 second using setTimeout().
+Event listener for keydown:
+
+When a key is pressed, the document.onkeydown event is triggered.
+The key code of the pressed key is logged to the console.
+If the up arrow key (keyCode 38) is pressed, a CSS class (animateDino) is added to the dinosaur element to animate it.
+If the right arrow key (keyCode 39) is pressed, the dinosaur's position (left style) is incremented by 112 pixels.
+If the left arrow key (keyCode 37) is pressed, the dinosaur's position (left style) is decremented by 112 pixels.
+Game loop (setInterval):
+
+This loop runs repeatedly with a small delay (10 milliseconds).
+It retrieves the positions of the dinosaur (dx, dy) and the obstacle (ox, oy).
+The offsets (offsetX, offsetY) between the dinosaur and the obstacle are calculated.
+If the offsets are below certain threshold values, the game is over:
+The text of an HTML element with class gameOver is updated to display "Game Over - Reload to Play Again".
+The obstacle's animation class is removed to freeze its movement.
+The audio file "mariofail.mp3" is played using audiogo.
+After a delay of 1 second, both audio files are paused.
+If the offsets are within a range and cross is true, the score is increased:
+The score is incremented by 1.
+The updateScore() function is called to update the score displayed on the page.
+cross is set to false to prevent further score increments.
+After a delay of 1 second, cross is set back to true.
+The animation duration of the obstacle is decreased by 0.1 seconds to increase the difficulty.
+Function updateScore(score):
+
+Updates the HTML content of an element (scoreCont) to display the current score.
+Mouse movement effects:
+
+The code is related to the mouse movement within a designated frame.
+The circle element (#circle) and frame element (.frame) are selected.
+The lerp function is defined, which performs linear interpolation between two values based on a given interpolation factor.
+A mousemove event listener is added to the window, which updates the position of the circle element to the mouse position with a smooth animation using gsap.to() from the GSAP library.
+Another mousemove event listener is added to the frame element, which calculates the interpolation factor (zeroone) based on the mouse's x-coordinate within the frame's dimensions.
+The x-coordinate of the text element inside the frame is updated using gsap.to(), creating a parallax-like effect.
+When the mouse leaves the frame (mouseleave event), the effects are reversed.
+Overall, the code combines game logic (controlling the dinosaur, scoring, and collision detection) with mouse movement effects using the GSAP library.
